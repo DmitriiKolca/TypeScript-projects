@@ -14,6 +14,7 @@ interface IPoint {
     long: number
 }
 
+
 interface I3DPoint extends IPoint {
     z: number;
 }
