@@ -31,3 +31,15 @@ interface IInputData {
     info: Info
     tags: Tag[]
 }
+
+type IsAction = 'up' | 'down';
+
+function PerformAction(action: IsAction): 1 | -1 {
+    switch (action) {
+        case "up":
+            return 1;
+        case "down":
+            return -1;
+
+    }
+}
