@@ -13,8 +13,10 @@ body {
 
 :root {
   --black: #3b434e;
+  --grey-light: #ebebeb;
   --white: white;
-  --primar: #7653FC;
+  --primary: #7653FC;
+  --primary-hover: #4111f5;
   --red: #FC836D;
   --green: #1DC37E;
   --green-light: #C8F8E4;
