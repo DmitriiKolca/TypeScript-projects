@@ -37,13 +37,12 @@
 
 .arrow {
     display: inline-block;
-
     margin-left: 10px;
 }
 
 .down {
     transform: rotate(90deg);
-    transition: 0.5s;
+    transition: 2s;
 }
 
 .primary svg,
