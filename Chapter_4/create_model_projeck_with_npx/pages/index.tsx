@@ -69,7 +69,7 @@ function Home({menu}: HomeProps) {
 
 export default withLayout(Home);
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps<HomeProps> = async () => {
     const firstCategory = 0;
     const {data: menu} = await axios.post<MenuItem[]>(process.env.NEXT_PUBLIC_DOMAIN + '/api/top-page/find',
         {firstCategory})
