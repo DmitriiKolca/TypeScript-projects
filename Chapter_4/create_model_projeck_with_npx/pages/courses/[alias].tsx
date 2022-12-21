@@ -1,14 +1,15 @@
-import {withLayout} from "../../layout/HOC/HOC";
+//import {withLayout} from "../../layout/Layout";
 import {GetStaticPaths, GetStaticProps, GetStaticPropsContext} from "next";
 import axios from "axios";
 import {MenuItem} from "../../interfaces/menu.interface";
 import {TopPageModel} from "../../interfaces/page.interface";
-import {ParsedUrlQuery} from "querystring";
+import {ParsedUrlQuery} from "node:querystring";
 import {ProductModel} from "../../interfaces/product.interface";
+import {withLayout} from "../../layout/HOC/HOC";
 
 const firstCategory = 0;
 
-function Course({menu, page, products}: CourseProps) {
+function Course({menu, page, products}: CourseProps): JSX.Element {
 
     return (
         <>
@@ -21,9 +22,9 @@ export default withLayout(Course);
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const {data: menu} = await axios.post<MenuItem[]>(process.env.NEXT_PUBLIC_DOMAIN + '/api/top-page/find',
-        {firstCategory})
+        {firstCategory});
     return {
-        paths: menu.flatMap(m => m.pages.map(p => '/courses' + p.alias)),
+        paths: menu.flatMap(m => m.pages.map(p => '/courses/' + p.alias)),
         fallback: true
     }
 }
@@ -54,8 +55,8 @@ export const getStaticProps: GetStaticProps<CourseProps> = async ({params}: GetS
             products
         }
     }
-};
 
+}
 interface CourseProps extends Record<string, unknown> {
     menu: MenuItem[];
     firstCategory: number;

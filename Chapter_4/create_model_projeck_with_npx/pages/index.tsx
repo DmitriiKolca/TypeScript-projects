@@ -43,12 +43,6 @@ function Home({menu}: HomeProps) {
             <Tag color={"gray"} size='s'>Маленький</Tag>
             <Tag color={"green"} href="www.figma.com" size='s'>Маленький</Tag>
 
-            <Tag color={"primary"} size='m'>Средний</Tag>
-            <Tag color={"ghost"} size='m'>Средний</Tag>
-            <Tag color={"red"} size='m'>Средний</Tag>
-            <Tag color={"gray"} size='m'>Средний</Tag>
-            <Tag color={"green"} href="www.figma.com" size='m'>Средний</Tag>
-
             <Tag color={"primary"}>Большой</Tag>
             <Tag color={"ghost"}>Большой</Tag>
             <Tag color={"red"}>Большой</Tag>
@@ -58,6 +52,7 @@ function Home({menu}: HomeProps) {
             <br></br>
 
             <Rating rating={rating} isEditable setRating={setRating}></Rating>
+
             <ul>
                 {menu.map(m => (<li key={m._id.secondCategory}>{m._id.secondCategory}</li>))}
             </ul>
